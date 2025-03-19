@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Gorras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="top">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="logo">Tienda de Gorras</a></li>
+                <li><a href="catalogo.html" class="btn-catalogo">Ver Catálogo de Gorras</a>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section (Introductory Information) -->
+    <section class="intro">
+        <div class="content">
+            <h1>¡Bienvenidos a nuestra Tienda de Gorras!</h1>
+            <p>Encuentra las mejores gorras de alta calidad para todos los estilos y edades. ¡Haz de tu look algo único!</p>
+            <a href="catalogo.html" class="btn-primary">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>¿Quiénes Somos?</h2>
+            <p>En Tienda de Gorras, ofrecemos productos de alta calidad, desde gorras de béisbol hasta gorras de moda para todos los gustos. Trabajamos con los mejores materiales para asegurar la durabilidad y el estilo. ¡Cada gorra tiene su historia!</p>
+            <a href="catalogo.html" class="btn-secondary">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+<section class="featured">
+    <h2>Gorras Destacadas</h2>
+    <div class="productos">
+        <div class="producto">
+            <img src="gorra1.jpg" alt="Gorra 1">
+            <h3>Gorra Estilo 1</h3>
+            <p>$20.00</p>
+            <a href="catalogo.html" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="producto">
+            <img src="gorra2.jpg" alt="Gorra 2">
+            <h3>Gorra Estilo 2</h3>
+            <p>$25.00</p>
+            <a href="catalogo.html" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="producto">
+            <img src="gorra3.jpg" alt="Gorra 3">
+            <h3>Gorra Estilo 3</h3>
+            <p>$30.00</p>
+            <a href="catalogo.html" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="producto">
+            <img src="gorra4.jpg" alt="Gorra 4">
+            <h3>Gorra Estilo 4</h3>
+            <p>$18.00</p>
+            <a href="catalogo.html" class="btn-secondary">Ver más</a>
+        </div>
+        <div class="producto">
+            <img src="gorra5.jpg" alt="Gorra 5">
+            <h3>Gorra Estilo 5</h3>
+            <p>$22.00</p>
+            <a href="catalogo.html" class="btn-secondary">Ver más</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>Lo que dicen nuestros clientes</h2>
+    
+    <!-- Testimonios Existentes -->
+    <div class="testimonial-container" id="testimonial-list">
+        <div class="testimonial">
+            <p>"Las gorras son de excelente calidad. ¡Estoy muy feliz con mi compra!"</p>
+            <h3>- Juan Pérez</h3>
+        </div>
+        <div class="testimonial">
+            <p>"Un servicio increíble, el envío fue rápido y la gorra me queda perfecta."</p>
+            <h3>- María Gómez</h3>
+        </div>
+        <div class="testimonial">
+            <p>"Me encanta el diseño de las gorras, tienen mucho estilo y son cómodas."</p>
+            <h3>- Carlos Martínez</h3>
+        </div>
+    </div>
+    
+    <!-- Formulario para Agregar Testimonios -->
+    <div class="testimonial-form">
+        <h3>Deja tu Testimonio</h3>
+        <form id="testimonial-form">
+            <input type="text" id="name" placeholder="Tu nombre" required>
+            <textarea id="message" placeholder="Tu comentario..." required></textarea>
+            <button type="submit" class="btn-submit">Enviar Testimonio</button>
+        </form>
+    </div>
+</section>
+
+         <script>
+
+             // Obtener el formulario y la lista de testimonios
+const testimonialForm = document.getElementById("testimonial-form");
+const testimonialList = document.getElementById("testimonial-list");
+
+// Función para agregar un nuevo testimonio
+testimonialForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Evitar que el formulario se envíe de manera convencional
+    
+    // Obtener los datos del formulario
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+    
+    // Crear un nuevo testimonio
+    const newTestimonial = document.createElement("div");
+    newTestimonial.classList.add("testimonial");
+    newTestimonial.innerHTML = `
+        <p>"${message}"</p>
+        <h3>- ${name}</h3>
+    `;
+    
+    // Agregar el nuevo testimonio a la lista
+    testimonialList.appendChild(newTestimonial);
+    
+    // Limpiar el formulario después de enviar
+    testimonialForm.reset();
+});
+
+         </script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Tienda de Gorras. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#top" class="scroll-to-top">↑</a>
+</body>
+</html>
